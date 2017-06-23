@@ -1,0 +1,24 @@
+/*table font color*/
+table {
+    color: white;
+}
+/*table width*/
+#
+listmovies {
+    width: 500 px;
+}
+h1,h3 ,p {
+    color: white;
+    text-shadow: 2px 2px 2px red;
+}
+label {
+    color: white;
+}
+body {
+    background: url('../image/movieapp-bkg.jpg');
+    background-repeat: no - repeat;
+    background-size: cover;
+}
+.logoutbtn {
+    padding-top:20px;
+}
