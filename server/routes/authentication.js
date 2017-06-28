@@ -8,14 +8,6 @@ router.post('/login', passport.authenticate('login', {
 		failureFlash : true
 	}));
 
-/* GET Registration Page */
-	/*router.get('/signup', function(req, res){
-		res.render('signup',{message: req.flash('message')});
-	});*/
-	
-	router.get('/signup', function(req, res, next) {
-  res.render('signup', { message: 'Express' });
-});
 	
 	/* Handle Registration POST */
 	router.post('/signup', passport.authenticate('signup', {

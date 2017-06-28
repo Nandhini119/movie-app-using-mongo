@@ -4,7 +4,7 @@ var sinon = require('sinon');
 var model = require('../models/movie.js');
 var signup = require('../models/signup.js');
 let movieSearch = require('../controller/moviecontrol');
-let signupControl = require('../controller/signupcontrol');
+let signupControl = require('../controller/logincontrol');
 var modelStub = sinon.stub(model, 'findOne');
 var signupStub = sinon.stub(signup, 'findOne');
 var app = require('../index.js');
@@ -20,7 +20,7 @@ describe('Test my controller', function() {
             }]);
         });
         it('should attempt to find items', function(done) {
-            address
+            request(app)
                 .get('/movie/view')
                 .expect(200)
                 .end(function(err, res) {
@@ -38,7 +38,7 @@ describe('Test my controller', function() {
            signupStub.withArgs({email:'gurunandhini119@gmail.com'}).returns({'fname':'nandhini'});
         });
         it('Matches the User', function(done) {
-            address
+            request(app)
                 .post('/signup')
                 .expect(302 || 200)
                 .end(function(err, res) {

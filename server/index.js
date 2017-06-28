@@ -3,7 +3,6 @@ let express = require('express'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
-    cookieParser = require('cookie-parser'),
     session = require('express-session'),
     passport = require('passport');
     flash = require('connect-flash');
@@ -24,7 +23,6 @@ app.set('view engine', 'jade');
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(cookieParser());
 app.use(session({
     secret: 'anystringoftext',
     saveUninitialized: true,
@@ -34,9 +32,9 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public/html')));
+/*app.use(express.static(path.join(__dirname, 'public/html')));
 app.use(express.static(path.join(__dirname, 'public/js')));
-app.use(express.static(path.join(__dirname, 'public/css')));
+app.use(express.static(path.join(__dirname, 'public/css')));*/
 
 app.use(passport.initialize());
 app.use(passport.session());

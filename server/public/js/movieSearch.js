@@ -66,7 +66,7 @@ function addfavourite(event) {
     $.ajax({
         url: '/movie/add',
         type: 'POST',
-        {
+       data: {
             field1: event.target.value,
             email: localStorage.getItem("email")
         }
